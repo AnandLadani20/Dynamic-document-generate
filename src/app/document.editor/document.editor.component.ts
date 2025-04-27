@@ -1,5 +1,4 @@
 import { Component, AfterViewInit } from '@angular/core';
-import grapesjs from 'grapesjs';
 import * as pdfjsLib from 'pdfjs-dist';
 import { registerFillableFields } from '../plugins/fillable-fields.plugin';
 import { initGrapesJs } from '../services/grapesjs-init.service';
