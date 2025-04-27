@@ -32,9 +32,12 @@
               }
             ],
             "styles": [
+              "node_modules/grapesjs/dist/css/grapes.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+               "node_modules/grapesjs/dist/grapes.min.js"
+            ]
           },
           "configurations": {
             "production": {

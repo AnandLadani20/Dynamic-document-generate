@@ -1,0 +1,37 @@
+#pdf-upload {
+    width: 100%;
+  }
+  
+  .pdf-document {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  
+  .pdf-page {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .panel__top {
+    position: relative;
+    top: 0px;
+    margin-bottom: 60px;
+  }
+  
+//   #gjs {
+//     background-size: cover;
+//     background-position: center;
+//     position: relative; /* Make sure fields can be positioned above */
+//   }
+
+  #gjs {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+
+  .panel__merge-field {
+    position: relative;
+    right: 0;
+  }
+  
