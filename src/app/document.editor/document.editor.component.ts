@@ -15,6 +15,12 @@ export class DocumentEditorComponent implements AfterViewInit {
 
     const editor = initGrapesJs('#gjs'); // Initialize GrapesJS editor
 
+    editor.on('run:preview', () => {
+      console.log('run');
+    })
+    editor.on('stop:preview', () => {
+      console.log('stop');
+    })
     // Add panels and commands
     editor.Panels.addPanel({ id: 'panel-top', el: '.panel__top' });
 
