@@ -2,6 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import * as pdfjsLib from 'pdfjs-dist';
 import { registerFillableFields } from '../plugins/fillable-fields.plugin';
 import { initGrapesJs } from '../services/grapesjs-init.service';
+import { registerPdfCommands } from '../plugins/pdf-commands.plugin';
 
 @Component({
   selector: 'app-document-editor',
@@ -30,7 +31,20 @@ export class DocumentEditorComponent implements AfterViewInit {
       buttons: [
         { id: 'upload-pdf', label: 'Upload PDF', command: 'upload-pdf-command', className: 'btn-upload-pdf' },
         { id: 'preview-pdf', label: 'Preview PDF', command: 'preview-pdf', className: 'btn-preview-pdf' },
-        { id: 'download-pdf', label: 'Download PDF', command: 'download-pdf', className: 'btn-download-pdf' }
+        { id: 'download-pdf', label: 'Download PDF', command: 'download-pdf', className: 'btn-download-pdf' },
+        {
+          id: 'add-page',
+          label: '+ Add Page',
+          command: 'add-new-page',
+          className: 'btn-add-page'
+        },
+        {
+          id: 'delete-page',
+          label: '🗑 Delete Page',
+          command: 'delete-selected-page',
+          className: 'btn-delete-page'
+        }
+        
       ]
     });
 
@@ -86,5 +100,7 @@ export class DocumentEditorComponent implements AfterViewInit {
       sidebar.style.display = 'none';
       editor.select(undefined); // unselect component
     });
+
+    registerPdfCommands(editor);
   }
 }
